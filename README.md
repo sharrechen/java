@@ -1,2 +1,2 @@
 # java-java
-Store some java snippets.
+Some java practice snippets.

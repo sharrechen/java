@@ -1,0 +1,77 @@
+package com.snmp;
+
+import com.fasterxml.jackson.annotation.JsonValue;
+
+public enum Oid {
+	
+	CPU_DESCRIPTION("1.3.6.1.2.1.25.3.2.1.3.196608"),
+
+	CPU_LOAD_1_MIN("1.3.6.1.4.1.2021.10.1.3.1"),
+	CPU_LOAD_5_MIN("1.3.6.1.4.1.2021.10.1.3.2"),
+	CPU_LOAD_10_MIN("1.3.6.1.4.1.2021.10.1.3.3"),
+	
+	CPU_IDLE_TIME("1.3.6.1.4.1.2021.11.53.0"),
+	CPU_USER_TIME("1.3.6.1.4.1.2021.11.50.0"),
+	CPU_SYSTEM_TIME("1.3.6.1.4.1.2021.11.52.0"),
+	CPU_NICE_TIME("1.3.6.1.4.1.2021.11.51.0"),
+	
+	CPU_IDLE_PERCENTAGE("1.3.6.1.4.1.2021.11.11.0"),
+	CPU_USER_PERCENTAGE("1.3.6.1.4.1.2021.11.9.0"),
+	CPU_SYSTEM_PERCENTAGE("1.3.6.1.4.1.2021.11.10.0"),
+	
+	DISK_USED("1.3.6.1.4.1.2021.9.1.8.1"),
+	DISK_AVAILABLE("1.3.6.1.4.1.2021.9.1.7.1"),
+	DISK_TOTAL("1.3.6.1.4.1.2021.9.1.6.1"), // kBytes
+
+	DISK_SPACED_USED_PERCENTAGE("1.3.6.1.4.1.2021.9.1.9.1"),
+	DISK_INODES_USED_PERCENTAGE("1.3.6.1.4.1.2021.9.1.10.1"),
+
+	DISK_MOUNTED_PATH("1.3.6.1.4.1.2021.9.1.2.1"),
+	DISK_DEVICE_PATH("1.3.6.1.4.1.2021.9.1.3.1"),
+
+	MEMORY_USED("1.3.6.1.4.1.2021.4.6.0"),
+	MEMORY_FREE("1.3.6.1.4.1.2021.4.11.0"),
+	MEMORY_CACHED("1.3.6.1.4.1.2021.4.15.0"),
+	MEMORY_SHARED("1.3.6.1.4.1.2021.4.13.0"),
+	MEMORY_BUFFERED("1.3.6.1.4.1.2021.4.14.0"),
+	MEMORY_SWAP_TOTAL("1.3.6.1.4.1.2021.4.3.0"),
+	MEMORY_SWAP_AVAILABLE("1.3.6.1.4.1.2021.4.4.0"),
+	MEMORY_TOTAL("1.3.6.1.4.1.2021.4.5.0"),
+	
+	SYSTEM_NAME("1.3.6.1.2.1.1.5.0"),
+	SYSTEM_UPTIME("1.3.6.1.2.1.1.3.0"),
+	SYSTEM_LOCATION("1.3.6.1.2.1.1.6.0"),
+	SYSTEM_DESCRIPTION("1.3.6.1.2.1.1.1.0"),
+
+	LA_TABLE("1.3.6.1.4.1.2021.10"),
+	IF_TABLE("1.3.6.1.2.1.2.2"),
+	FS_TABLE("1.3.6.1.2.1.25.3.8"),
+	IP_ADDR_TABLE("1.3.6.1.2.1.4.20"),
+	STORAGE_TABLE("1.3.6.1.2.1.25.2.3"),
+	DISK_IO_TABLE("1.3.6.1.4.1.2021.13.15.1"),
+	DEVICE_TABLE("1.3.6.1.2.1.25.3.2"),
+	SW_RUN_TABLE("1.3.6.1.2.1.25.4.2"),
+	SW_INSTALLED_TABLE("1.3.6.1.2.1.25.6.3"),
+	PROCESSOR_TABLE("1.3.6.1.2.1.25.3.3"),
+	
+	IP_AD_ENT_IF_INDEX("1.3.6.1.2.1.4.20.1.2"),
+	IF_DESCR("1.3.6.1.2.1.2.2.1.2"),
+
+	GATEWAY_IP("1.3.6.1.2.1.4.21.1.7.0.0.0.0"),
+	IP_MASK_START_WITH("1.3.6.1.2.1.4.20.1.3."),
+	
+	private String value;
+
+	private Oid(String value) {
+		this.value = value;
+	}
+
+	@JsonValue
+	public String getValue() {
+		return value;
+	}
+	
+	public void setValue(String value) {
+		this.value = value;
+	}
+}
